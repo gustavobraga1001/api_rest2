@@ -19,3 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::apiResource('posts', \App\Http\Controllers\api\PostsController::class);
+
+Route::get('ola', function(){
+    echo 'ola';
+});
