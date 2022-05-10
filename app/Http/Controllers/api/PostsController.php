@@ -14,7 +14,8 @@ class PostsController extends Controller
 
     public function index()
     {
-        return Posts::all();
+        $post = Posts::all('id','title','description');
+        return $post;
 
     }
 
@@ -31,7 +32,7 @@ class PostsController extends Controller
 
     public function show($id)
     {
-        return Posts::findOrFail($id, ['title','description']);
+        return Posts::findOrFail($id, ['id','title','description']);
     }
 
     public function update(Request $request, $id)
